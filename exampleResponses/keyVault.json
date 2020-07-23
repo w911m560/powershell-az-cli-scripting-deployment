@@ -1,0 +1,82 @@
+{
+  "id": "/subscriptions/484166ab-b42b-4c72-a684-a5f7f1540e80/resourceGroups/paul-cli-scripting-rg/providers/Microsoft.KeyVault/vaults/paul-cli-scripting-kv",
+  "location": "eastus",
+  "name": "paul-cli-scripting-kv",
+  "properties": {
+    "accessPolicies": [
+      {
+        "applicationId": null,
+        "objectId": "229992e3-4630-4440-9b3a-18825ed47dc4",
+        "permissions": {
+          "certificates": [
+            "get",
+            "list",
+            "delete",
+            "create",
+            "import",
+            "update",
+            "managecontacts",
+            "getissuers",
+            "listissuers",
+            "setissuers",
+            "deleteissuers",
+            "manageissuers",
+            "recover"
+          ],
+          "keys": [
+            "get",
+            "create",
+            "delete",
+            "list",
+            "update",
+            "import",
+            "backup",
+            "restore",
+            "recover"
+          ],
+          "secrets": [
+            "get",
+            "list",
+            "set",
+            "delete",
+            "backup",
+            "restore",
+            "recover"
+          ],
+          "storage": [
+            "get",
+            "list",
+            "delete",
+            "set",
+            "update",
+            "regeneratekey",
+            "setsas",
+            "listsas",
+            "getsas",
+            "deletesas"
+          ]
+        },
+        "tenantId": "d61de018-082f-46bb-80e0-bbde4455d074"
+      }
+    ],
+    "createMode": null,
+    "enablePurgeProtection": null,
+    "enableRbacAuthorization": null,
+    "enableSoftDelete": false,
+    "enabledForDeployment": true,
+    "enabledForDiskEncryption": null,
+    "enabledForTemplateDeployment": null,
+    "networkAcls": null,
+    "privateEndpointConnections": null,
+    "provisioningState": "Succeeded",
+    "sku": {
+      "name": "standard"
+    },
+    "softDeleteRetentionInDays": 90,
+    "tenantId": "d61de018-082f-46bb-80e0-bbde4455d074",
+    "vaultUri": "https://paul-cli-scripting-kv.vault.azure.net/"
+  },
+  "resourceGroup": "paul-cli-scripting-rg",
+  "tags": {},
+  "type": "Microsoft.KeyVault/vaults"
+}
