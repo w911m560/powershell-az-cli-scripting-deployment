@@ -5,8 +5,12 @@ set -ex
 # -- env vars --
 
 # for cloning in delivery
-github_username=pdmxdd
-solution_branch=cli-deploy
+
+# TODO: enter your GitHub user name
+github_username=
+
+# TODO: enter the name of your project branch that has your updated code
+solution_branch=
 
 # api
 api_service_user=api-user
