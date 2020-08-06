@@ -5,12 +5,7 @@ set -ex
 # -- env vars --
 
 # for cloning in delivery
-
-# TODO: enter your GitHub user name
-github_username=
-
-# TODO: enter the name of your project branch that has your updated code
-solution_branch=
+solution_branch=4-troubleshooting
 
 # api
 api_service_user=api-user
@@ -58,7 +53,7 @@ EOF
 
 # deliver source code
 
-git clone https://github.com/$github_username/coding-events-api /tmp/coding-events-api
+git clone https://github.com/launchcodeeducation/coding-events-api /tmp/coding-events-api
 
 cd /tmp/coding-events-api/CodingEventsAPI
 
@@ -66,6 +61,9 @@ cd /tmp/coding-events-api/CodingEventsAPI
 git checkout $solution_branch
 
 dotnet publish -c Release -r linux-x64 -o "$api_working_dir"
+
+# write public IP address to appsettings.json ServerOrigins
+sed -i "/ServerOrigin/s/\"\"/\"https:\/\/$(curl https://ipinfo.io/ip -s)\"/" "$api_working_dir/appsettings.json"
 
 # -- end deliver --
 

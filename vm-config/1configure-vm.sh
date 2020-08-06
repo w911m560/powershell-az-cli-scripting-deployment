@@ -46,3 +46,6 @@ EOF
 mysql -u root --password=lc-password mysql < setup.sql
 
 # END CONFIGURE
+
+systemctl disable mysql
+service mysql stop

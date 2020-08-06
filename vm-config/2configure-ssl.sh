@@ -59,24 +59,19 @@ http {
   proxy_send_timeout      90;
   proxy_read_timeout      90;
   proxy_buffers           32 4k;
-
   limit_req_zone \$binary_remote_addr zone=one:10m rate=5r/s;
   server_tokens  off;
-
   sendfile on;
   keepalive_timeout   29; # Adjust to the lowest possible value that makes sense for your use case.
   client_body_timeout 10; client_header_timeout 10; send_timeout 10;
-
   upstream api{
     server localhost:5000;
   }
-
   server {
     listen     *:80;
     add_header Strict-Transport-Security max-age=15768000;
     return     301 https://\$host\$request_uri;
   }
-
   server {
     listen                    *:443 ssl;
     server_name               codeeventsapi.com;
@@ -90,11 +85,9 @@ http {
     ssl_session_tickets       off;
     ssl_stapling              on; #ensure your cert is capable
     ssl_stapling_verify       on; #ensure your cert is capable
-
     add_header Strict-Transport-Security "max-age=63072000; includeSubdomains; preload";
     add_header X-Frame-Options DENY;
     add_header X-Content-Type-Options nosniff;
-
     #Redirects all traffic
     location / {
       proxy_pass http://api;
@@ -106,3 +99,6 @@ EOF
 
 # reload nginx to use this new conf file
 nginx -s reload
+
+systemctl disable nginx
+service nginx stop
