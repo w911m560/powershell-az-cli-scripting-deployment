@@ -1,2 +1,2 @@
 provision-resources.sh
-outputs/
+*.json
