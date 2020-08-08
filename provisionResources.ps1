@@ -25,6 +25,6 @@ az keyvault create -n $kvName --enable-soft-delete false --enabled-for-deploymen
 
 # TODO: set KV access-policy (using the vm ``systemAssignedIdentity``)
 
-az vm run-command invoke --command-id RunShellScript --scripts @.\vm-configuration-scripts\1configure-vm.sh @.\vm-configuration-scripts\2configure-ssl.sh @deliver-deploy.sh
+az vm run-command invoke --command-id RunShellScript --scripts @vm-configuration-scripts\1configure-vm.sh @vm-configuration-scripts\2configure-ssl.sh @deliver-deploy.sh
 
 # TODO: print VM public IP address to STDOUT or save it as a file
