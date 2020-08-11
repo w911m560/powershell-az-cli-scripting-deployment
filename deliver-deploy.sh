@@ -7,10 +7,10 @@ set -ex
 # for cloning in delivery
 
 # TODO: enter your GitHub user name
-github_username=
+github_username=w911m560
 
 # TODO: enter the name of your project branch that has your updated code
-solution_branch=
+solution_branch=studio-9
 
 # api
 api_service_user=api-user
